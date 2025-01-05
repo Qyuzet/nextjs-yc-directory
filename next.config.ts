@@ -29,13 +29,6 @@ const nextConfig: NextConfig = {
     buildActivity: true,
     buildActivityPosition: "bottom-right",
   },
-  webpack: (config) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      isSpace: require.resolve("markdown-it/lib/common/utils"),
-    };
-    return config;
-  },
 };
 
 export default withSentryConfig(nextConfig, {
